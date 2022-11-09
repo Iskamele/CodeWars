@@ -1,6 +1,6 @@
 package T01_TakeATenMinutesWalk;
 
-public class TenMinWalkBestSolution {
+public class TenMinWalkBest {
     public static boolean isValid(char[] walk) {
         if (walk.length != 10) {
             return false;
