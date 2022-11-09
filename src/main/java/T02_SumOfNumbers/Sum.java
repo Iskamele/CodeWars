@@ -2,6 +2,7 @@ package T02_SumOfNumbers;
 
 public class Sum {
     public int GetSum(int a, int b) {
+        // comm
         int result = 0;
         if (a == b) {
             return a;

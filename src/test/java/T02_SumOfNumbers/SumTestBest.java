@@ -5,6 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class SumTestBest {
+    // comm
     SumBest s = new SumBest();
 
     @Test
