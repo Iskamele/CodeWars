@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by Javatlacati on 01/03/2017.
  */
-public class KataTestBest {
+public class CreatePhoneNumberTestBest {
     @Test
     public void findShort() throws Exception {
         assertEquals(3, ShortestWordBest.findShort("bitcoin take over the world maybe who knows perhaps"));
