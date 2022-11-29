@@ -1,12 +1,3 @@
-/**
- * 5 kyu - Simple Pig Latin
- * <p>
- * https://www.codewars.com/kata/520b9d2ad5c005041100000f
- * <p>
- * Move the first letter of each word to the end of it,
- * then add "ay" to the end of the word. Leave punctuation marks untouched.
- */
-
 package T12_SimplePigLatin;
 
 import java.util.regex.Pattern;
