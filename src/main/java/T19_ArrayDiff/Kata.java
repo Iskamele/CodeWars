@@ -6,7 +6,7 @@ public class Kata {
 
     public static int[] arrayDiff(int[] a, int[] b) {
         return Arrays.stream(a)
-                .filter(x -> Arrays.stream(b).noneMatch(y -> y == x))
+                .filter(i -> Arrays.stream(b).noneMatch(j -> j == i))
                 .toArray();
     }
 }
