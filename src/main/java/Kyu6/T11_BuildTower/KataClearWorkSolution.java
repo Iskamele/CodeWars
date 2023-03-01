@@ -1,6 +1,6 @@
 package Kyu6.T11_BuildTower;
 
-public class KataClearWork {
+public class KataClearWorkSolution {
     public static String[] TowerBuilder(int n) {
         String[] t = new String[n];
         String e;

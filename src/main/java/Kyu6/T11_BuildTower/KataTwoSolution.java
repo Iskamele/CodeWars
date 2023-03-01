@@ -1,6 +1,6 @@
 package Kyu6.T11_BuildTower;
 
-public class Kata2
+public class KataTwoSolution
 {
   public static String[] towerBuilder(int nFloors)  {
     String[] tower = new String[nFloors];
