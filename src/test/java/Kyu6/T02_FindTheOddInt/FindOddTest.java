@@ -1,8 +1,8 @@
 package Kyu6.T02_FindTheOddInt;
 
-import org.junit.Test;
-
 import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
 
 public class FindOddTest {
 

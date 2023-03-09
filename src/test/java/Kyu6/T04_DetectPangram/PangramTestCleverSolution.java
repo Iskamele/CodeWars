@@ -1,8 +1,8 @@
 package Kyu6.T04_DetectPangram;
 
-import org.junit.Test;
-
 import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
 
 
 public class PangramTestCleverSolution {
@@ -25,6 +25,5 @@ public class PangramTestCleverSolution {
         PangramCheckerCleverSolution pc = new PangramCheckerCleverSolution();
         assertEquals(true, pc.check(("npxdzfgiqhk wu emgoy ohauferjt ysv vck altb")));
         assertEquals(true, pc.check(("m rxqupjnlaswchgbi zoykvdet f")));
-
     }
 }
