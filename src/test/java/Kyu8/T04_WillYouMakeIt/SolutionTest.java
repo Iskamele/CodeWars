@@ -10,5 +10,8 @@ public class SolutionTest {
     public void testSomething() {
         assertTrue(Kata.zeroFuel(50, 25, 2));
         assertFalse(Kata.zeroFuel(100, 50, 1));
+
+        assertTrue(NewKata.zeroFuel(50, 25, 2));
+        assertFalse(NewKata.zeroFuel(100, 50, 1));
     }
 }
