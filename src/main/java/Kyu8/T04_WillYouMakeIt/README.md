@@ -5,3 +5,5 @@ Considering these factors, write a function that tells you if it is possible to 
 Function should return `true` if it is possible and `false` if not.
 
 #MATHEMATICS #FUNDAMENTALS
+
+https://www.codewars.com/kata/5861d28f124b35723e00005e
