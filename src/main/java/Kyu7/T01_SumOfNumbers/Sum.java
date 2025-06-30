@@ -1,7 +1,8 @@
 package Kyu7.T01_SumOfNumbers;
 
 public class Sum {
-    public int GetSum(int a, int b) {
+
+    public int getSum(int a, int b) {
         int result = 0;
         if (a == b) {
             return a;
