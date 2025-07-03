@@ -15,3 +15,5 @@ highAndLow("1 9 3 4 -5") // return "9 -5"
 -   Output string must be two numbers separated by a single space, and highest number is first.
 
 #FUNDAMENTALS #STRINGS
+
+https://www.codewars.com/kata/554b4ac871d6813a03000035

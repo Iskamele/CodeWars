@@ -11,3 +11,5 @@ Kata.filterList(List.of(1, 2, "a", "b", "aasf", "1", "123", 231)) => List.of(1, 
 ---
 
 #LISTS #FILTERING #DATA_STRUCTURES #FUNDAMENTALS
+
+https://www.codewars.com/kata/53dbd5315a3c69eed20002dd
