@@ -34,3 +34,5 @@ Don't forget to convert the percent parameter as a percentage in the body of you
 ---
 
 #FUNDAMENTALS
+
+https://www.codewars.com/kata/563b662a59afc2b5120000c6
