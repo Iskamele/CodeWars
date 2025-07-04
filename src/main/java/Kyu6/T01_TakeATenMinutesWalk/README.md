@@ -9,4 +9,4 @@ _Note: you will always receive a valid array containing a random assortment of d
 
 #ARRAYS #FUNDAMENTALS
 
-#### [Train this kata on CodeWars](https://www.codewars.com/kata/54da539698b8a2ad76000228)
+https://www.codewars.com/kata/54da539698b8a2ad76000228

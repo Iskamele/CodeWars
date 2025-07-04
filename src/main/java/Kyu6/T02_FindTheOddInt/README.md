@@ -20,4 +20,4 @@ There will always be only one integer that appears an odd number of times.
 
 #FUNDAMENTALS
 
-#### [Train this kata on CodeWars](https://www.codewars.com/kata/54da5a58ea159efa38000836)
+https://www.codewars.com/kata/54da5a58ea159efa38000836
