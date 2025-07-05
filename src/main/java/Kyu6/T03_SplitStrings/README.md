@@ -13,4 +13,4 @@ Complete the solution so that it splits the string into pairs of two characters.
 
 #REGULAR_EXPRESSIONS #STRINGS #ALGORITHMS
 
-#### [Train this kata on CodeWars](https://www.codewars.com/kata/515de9ae9dcfc28eb6000001)
+https://www.codewars.com/kata/515de9ae9dcfc28eb6000001

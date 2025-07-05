@@ -15,3 +15,5 @@ Note: For 4 or more names, the number in `"and 2 others"` simply increases.
 ---
 
 #STRINGS #FUNDAMENTALS
+
+https://www.codewars.com/kata/5266876b8f4bf2da9b000362

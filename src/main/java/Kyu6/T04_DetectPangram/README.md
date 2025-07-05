@@ -9,4 +9,4 @@ Given a string, detect whether or not it is a pangram. Return True if it is, Fal
 
 #STRINGS #DATA_STRUCTURES #FUNDAMENTALS
 
-#### [Train this kata on CodeWars](https://www.codewars.com/kata/545cedaa9943f7fe7b000048)
+https://www.codewars.com/kata/545cedaa9943f7fe7b000048
