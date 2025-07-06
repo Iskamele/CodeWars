@@ -13,7 +13,6 @@ import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
-import Kyu6.T09_VersionsManager.VersionManager;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class VersionManagerTest {
@@ -132,9 +131,7 @@ class VersionManagerTest {
     @DisplayName("Invalid rollbacks")
     void invalidRollbacks() {
         VersionManager m = new VersionManager();
-        assertEquals("Cannot rollback!",
-                assertThrows(Exception.class, m::rollback).getMessage(),
-                "Wrong error message");
+        assertEquals("Cannot rollback!", assertThrows(Exception.class, m::rollback).getMessage(), "Wrong error message");
         assertDoesNotThrow(m::major, "VersionManager should still be useable after failed rollback");
         assertDoesNotThrow(m::rollback, "VersionManager can rollback once");
         assertThrows(Exception.class, m::rollback, "Cannot rollback twice after one release");

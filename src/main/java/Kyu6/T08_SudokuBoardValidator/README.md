@@ -50,3 +50,5 @@ This cell has a 0 > 0 3 4|6 7 8|9 1 2
 -   User solution must not modify input boards.
 
 #ALGORITHMS #GAMES
+
+https://www.codewars.com/kata/63d1bac72de941033dbf87ae

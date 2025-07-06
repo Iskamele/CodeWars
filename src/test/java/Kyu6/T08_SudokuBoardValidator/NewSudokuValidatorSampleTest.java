@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.function.Function;
 import org.junit.jupiter.api.Test;
 
-class SudokuValidatorSampleTest2 {
+class NewSudokuValidatorSampleTest {
 
     private final int[][] firstBoard = { // false
         {5, 5, 5, 5, 5, 5, 5, 5, 5},
@@ -221,119 +221,119 @@ class SudokuValidatorSampleTest2 {
     @Test
     void firstBoard_false() {
         int[][] input = firstBoard.clone();
-        boolean actual = SudokuValidator.validate(input);
+        boolean actual = NewSudokuValidator.validate(input);
         assertFalse(actual, String.format("Incorrect answer for board:\n\n%s\n", stringify(input)));
     }
 
     @Test
     void secondBoard_false() {
         int[][] input = secondBoard.clone();
-        boolean actual = SudokuValidator.validate(input);
+        boolean actual = NewSudokuValidator.validate(input);
         assertFalse(actual, String.format("Incorrect answer for board:\n\n%s\n", stringify(input)));
     }
 
     @Test
     void thirdBoard_true() {
         int[][] input = thirdBoard.clone();
-        boolean actual = SudokuValidator.validate(input);
+        boolean actual = NewSudokuValidator.validate(input);
         assertTrue(actual, String.format("Incorrect answer for board:\n\n%s\n", stringify(input)));
     }
 
     @Test
     void fourthBoard_true() {
         int[][] input = fourthBoard.clone();
-        boolean actual = SudokuValidator.validate(input);
+        boolean actual = NewSudokuValidator.validate(input);
         assertTrue(actual, String.format("Incorrect answer for board:\n\n%s\n", stringify(input)));
     }
 
     @Test
     void fifthBoard_true() {
         int[][] input = fifthBoard.clone();
-        boolean actual = SudokuValidator.validate(input);
+        boolean actual = NewSudokuValidator.validate(input);
         assertTrue(actual, String.format("Incorrect answer for board:\n\n%s\n", stringify(input)));
     }
 
     @Test
     void sixthBoard_true() {
         int[][] input = sixthBoard.clone();
-        boolean actual = SudokuValidator.validate(input);
+        boolean actual = NewSudokuValidator.validate(input);
         assertTrue(actual, String.format("Incorrect answer for board:\n\n%s\n", stringify(input)));
     }
 
     @Test
     void seventhBoard_true() {
         int[][] input = seventhBoard.clone();
-        boolean actual = SudokuValidator.validate(input);
+        boolean actual = NewSudokuValidator.validate(input);
         assertTrue(actual, String.format("Incorrect answer for board:\n\n%s\n", stringify(input)));
     }
 
     @Test
     void eightBoard_true() {
         int[][] input = eightBoard.clone();
-        boolean actual = SudokuValidator.validate(input);
+        boolean actual = NewSudokuValidator.validate(input);
         assertTrue(actual, String.format("Incorrect answer for board:\n\n%s\n", stringify(input)));
     }
 
     @Test
     void ninthBoard_true() {
         int[][] input = ninthBoard.clone();
-        boolean actual = SudokuValidator.validate(input);
+        boolean actual = NewSudokuValidator.validate(input);
         assertTrue(actual, String.format("Incorrect answer for board:\n\n%s\n", stringify(input)));
     }
 
     @Test
     void tenthBoard_true() {
         int[][] input = tenthBoard.clone();
-        boolean actual = SudokuValidator.validate(input);
+        boolean actual = NewSudokuValidator.validate(input);
         assertTrue(actual, String.format("Incorrect answer for board:\n\n%s\n", stringify(input)));
     }
 
     @Test
     void eleventhBoard_false() {
         int[][] input = eleventhBoard.clone();
-        boolean actual = SudokuValidator.validate(input);
+        boolean actual = NewSudokuValidator.validate(input);
         assertFalse(actual, String.format("Incorrect answer for board:\n\n%s\n", stringify(input)));
     }
 
     @Test
     void twelfthBoard_false() {
         int[][] input = twelfthBoard.clone();
-        boolean actual = SudokuValidator.validate(input);
+        boolean actual = NewSudokuValidator.validate(input);
         assertFalse(actual, String.format("Incorrect answer for board:\n\n%s\n", stringify(input)));
     }
 
     @Test
     void thirteenthBoard_false() {
         int[][] input = thirteenthBoard.clone();
-        boolean actual = SudokuValidator.validate(input);
+        boolean actual = NewSudokuValidator.validate(input);
         assertFalse(actual, String.format("Incorrect answer for board:\n\n%s\n", stringify(input)));
     }
 
     @Test
     void fourteenthBoard_false() {
         int[][] input = fourteenthBoard.clone();
-        boolean actual = SudokuValidator.validate(input);
+        boolean actual = NewSudokuValidator.validate(input);
         assertFalse(actual, String.format("Incorrect answer for board:\n\n%s\n", stringify(input)));
     }
 
     @Test
     void fifteenthBoard_false() {
         int[][] input = fifteenthBoard.clone();
-        boolean actual = SudokuValidator.validate(input);
+        boolean actual = NewSudokuValidator.validate(input);
         assertFalse(actual, String.format("Incorrect answer for board:\n\n%s\n", stringify(input)));
     }
 
     @Test
     void sixteenthBoard_false() {
         int[][] input = sixteenthBoard.clone();
-        boolean actual = SudokuValidator.validate(input);
+        boolean actual = NewSudokuValidator.validate(input);
         assertFalse(actual, String.format("Incorrect answer for board:\n\n%s\n", stringify(input)));
     }
 
     @Test
     void seventeenthBoard_false() {
         int[][] input = seventeenthBoard.clone();
-        boolean actual = SudokuValidator.validate(input);
+        boolean actual = NewSudokuValidator.validate(input);
         assertFalse(actual, String.format("Incorrect answer for board:\n\n%s\n", stringify(input)));
     }
 }

@@ -15,3 +15,5 @@ Kata.arrayDiff(new int[] {1, 2, 2, 2, 3}, new int[] {2}) => new int[] {1, 3}
 ---
 
 #ARRAYS #FUNDAMENTALS #ALGORITHMS
+
+https://www.codewars.com/kata/523f5d21c841566fde000009
