@@ -13,4 +13,4 @@ pigIt('Hello world !');     // elloHay orldway !
 
 #REGULAR_EXPRESSIONS #ALGORITHMS
 
-#### [Train this kata on CodeWars](https://www.codewars.com/kata/520b9d2ad5c005041100000f)
+https://www.codewars.com/kata/520b9d2ad5c005041100000f
