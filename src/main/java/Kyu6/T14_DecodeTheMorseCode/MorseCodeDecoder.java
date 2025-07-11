@@ -11,14 +11,22 @@ public class MorseCodeDecoder {
     public static String decode(String morseCode) {
         String[] words = morseCode.trim().split(WORD_SEPARATOR);
         StringBuilder builder = new StringBuilder();
-        for (String word : words) {
-            for (String letter : word.split(LETTER_SEPARATOR)) {
-                builder.append(getWordFromLibrary(letter));
-            }
-            builder.append(" ");
-        }
+        processWords(words, builder);
 
         return builder.toString().trim();
+    }
+
+    private static void processWords(String[] words, StringBuilder builder) {
+        for (String word : words) {
+            decodeLetters(word, builder);
+            builder.append(" ");
+        }
+    }
+
+    private static void decodeLetters(String word, StringBuilder builder) {
+        for (String letter : word.split(LETTER_SEPARATOR)) {
+            builder.append(getWordFromLibrary(letter));
+        }
     }
 
     private static String getWordFromLibrary(String key) {
