@@ -2,95 +2,87 @@ package Kyu5.T04_SnakesAndLadders;
 
 public class SnakesLadders {
 
-    private int playerOne = 0;
-    private int playerTwo = 0;
-    boolean isPlayerOne = true;
+    private int player1Position = 0;
+    private int player2Position = 0;
+    boolean isPlayer1Turn = true;
 
     public SnakesLadders() {
     }
 
     public String play(int die1, int die2) {
-        if (playerOne == 100 || playerTwo == 100) {
+        if (gameIsOver()) {
             return "Game over!";
         }
 
-        boolean additionalTurn = die1 == die2;
+        boolean isDouble = die1 == die2;
         int steps = die1 + die2;
-        int destination;
 
-        if (isPlayerOne) {
-            isPlayerOne = false;
-            int value = playerOne + steps;
-            destination = extractPortalRightSquareValue(value);
+        if (isPlayer1Turn) {
+            player1Position = makeMove(player1Position, steps);
 
-            playerOne = setDestination(destination, value);
-
-            if (isPlayerWin(playerOne)) {
+            if (hasWon(player1Position)) {
                 return "Player 1 Wins!";
             }
 
-            if (isPlayerBehindTheBoard(playerOne)) {
-                playerOne = setReturnToBoardDestination(playerOne);
+            String result = "Player 1 is on square " + player1Position;
+
+            if (!isDouble) {
+                isPlayer1Turn = false;
             }
 
-            if (additionalTurn) {
-                isPlayerOne = true;
-            }
+            return result;
         } else {
-            isPlayerOne = true;
-            int value = playerTwo + steps;
-            destination = extractPortalRightSquareValue(value);
+            player2Position = makeMove(player2Position, steps);
 
-            playerTwo = setDestination(destination, value);
-
-            if (isPlayerWin(playerTwo)) {
+            if (hasWon(player2Position)) {
                 return "Player 2 Wins!";
             }
 
-            if (isPlayerBehindTheBoard(playerTwo)) {
-                playerTwo = setReturnToBoardDestination(playerTwo);
+            String result = "Player 2 is on square " + player2Position;
+
+            if (!isDouble) {
+                isPlayer1Turn = true;
             }
 
-            if (additionalTurn) {
-                isPlayerOne = false;
-            }
+            return result;
+        }
+    }
 
-            return "Player 2 is on square " + playerTwo;
+    private int makeMove(int currentPosition, int steps) {
+        int newPosition = currentPosition + steps;
+
+        if (newPosition > 100) {
+            newPosition = bounceBack(newPosition);
         }
 
-        return "Player 1 is on square " + playerOne;
+        return applySnakeOrLadder(newPosition);
     }
 
-    private int setReturnToBoardDestination(int player) {
-        int destination = 100 - (player - 100);
-        if (isPortal(destination)) {
-            return extractPortalRightSquareValue(destination);
+    private int bounceBack(int position) {
+        return 100 - (position - 100);
+    }
+
+    private int applySnakeOrLadder(int position) {
+        if (position > board.length - 1) {
+            return position;
         }
-        return destination;
+
+        int destination = getDestination(position);
+
+        return destination != 0 ? destination : position;
     }
 
-    private boolean isPlayerBehindTheBoard(int player) {
-        return player > 100.0;
+    private int getDestination(int position) {
+        double boardValue = board[position];
+        return (int) Math.round((boardValue % 1) * 100);
     }
 
-    private boolean isPlayerWin(int player) {
+    private boolean gameIsOver() {
+        return player1Position == 100 || player2Position == 100;
+    }
+
+    private boolean hasWon(int player) {
         return player == 100.0;
-    }
-
-    private int setDestination(int destination, int value) {
-        return destination == 0 ? extractLeftSquareValue(value) : destination;
-    }
-
-    private int extractLeftSquareValue(int value) {
-        return (int) Math.floor(board[value]);
-    }
-
-    private int extractPortalRightSquareValue(int value) {
-        return (int) Math.round((board[value] % 1) * 100);
-    }
-
-    private boolean isPortal(int value) {
-        return extractPortalRightSquareValue(value) > 0;
     }
 
     private static double[] board = {
