@@ -13,54 +13,77 @@ public class MorseCodeDecoder {
     private static final String LETTER_SEPARATOR = "\\s{1}";
 
     public static String decodeBits(String bits) {
-        Integer[] array = Arrays.stream(bits.chars().toArray()).boxed().toArray(Integer[]::new);
+        Integer[] bitsAsArray = Arrays.stream(bits.chars().toArray())
+            .boxed()
+            .toArray(Integer[]::new);
 
-        List<Integer> first = new ArrayList<>();
-        first.add(array[0]);
-        first.add(1);
+        List<Integer> firstSignal = new ArrayList<>();
+        firstSignal.add(bitsAsArray[0]);
+        firstSignal.add(1);
 
-        List<List<Integer>> list = new ArrayList<>();
-        list.add(first);
+        List<List<Integer>> connectsAndDuration = new ArrayList<>();
+        connectsAndDuration.add(firstSignal);
 
-        int index = 0;
-        for (int i = 1; i < array.length; i++) {
-            if (Objects.equals(array[i], list.get(index).get(0))) {
-                List<Integer> list1 = list.get(index);
-                list.remove(list.size() - 1);
+        extractConnectionsAndDuration(bitsAsArray, connectsAndDuration);
+
+        return getMorseCodeByConnectsAndDurations(connectsAndDuration);
+    }
+
+    private static void extractConnectionsAndDuration(Integer[] bitsAsArray,
+        List<List<Integer>> connectsAndDuration) {
+        int connectsAndDurationArrayIndex = 0;
+        for (int element = 1; element < bitsAsArray.length; element++) {
+            if (Objects.equals(
+                bitsAsArray[element],
+                connectsAndDuration.get(connectsAndDurationArrayIndex).get(0)
+            )) {
+                List<Integer> list1 = connectsAndDuration.get(connectsAndDurationArrayIndex);
+                connectsAndDuration.remove(connectsAndDuration.size() - 1);
                 Integer last = list1.get(1);
                 last++;
                 list1.remove(list1.size() - 1);
                 list1.add(last);
-                list.add(list1);
+                connectsAndDuration.add(list1);
             } else {
                 ArrayList<Integer> newItem = new ArrayList<>();
-                newItem.add(array[i]);
+                newItem.add(bitsAsArray[element]);
                 newItem.add(1);
-                list.add(newItem);
-                index++;
+                connectsAndDuration.add(newItem);
+                connectsAndDurationArrayIndex++;
             }
         }
-        StringBuilder builder = new StringBuilder();
-        for (List<Integer> integers : list) {
-            if (integers.get(0) == 49) {
-                if (integers.get(1) == 2) {
-                    builder.append(".");
-                }
-                if (integers.get(1) == 6) {
-                    builder.append("-");
-                }
-            }
+    }
 
-            if (integers.get(0) == 48) {
-                if (integers.get(1) == 6) {
-                    builder.append(" ");
-                }
-                if (integers.get(1) > 6) {
-                    builder.append("   ");
-                }
-            }
+    private static String getMorseCodeByConnectsAndDurations(
+        List<List<Integer>> connectsAndDuration) {
+        StringBuilder builder = new StringBuilder();
+        for (List<Integer> integers : connectsAndDuration) {
+            pressedKey(integers, builder);
+            pausedKey(integers, builder);
         }
         return builder.toString();
+    }
+
+    private static void pressedKey(List<Integer> integers, StringBuilder builder) {
+        if (integers.get(0) == 49) {
+            if (integers.get(1) == 2) {
+                builder.append(".");
+            }
+            if (integers.get(1) == 6) {
+                builder.append("-");
+            }
+        }
+    }
+
+    private static void pausedKey(List<Integer> integers, StringBuilder builder) {
+        if (integers.get(0) == 48) {
+            if (integers.get(1) == 6) {
+                builder.append(" ");
+            }
+            if (integers.get(1) > 6) {
+                builder.append("   ");
+            }
+        }
     }
 
     public static String decodeMorse(String morseCode) {
